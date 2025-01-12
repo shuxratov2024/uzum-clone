@@ -124,6 +124,66 @@
         opacity: 1;
         transition: all 0.3s ease-in-out;
     }
+    &-login{
+        display: none;
+        // display: flex;
+        // opacity: 0;
+        transition: all 0.3s ease-in-out;
+        justify-content: center;
+        margin: 0 auto;
+        
+        &-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            gap: 10px;
+            height: 300px;
+
+            padding: 10px 15px;
+            border-radius: 5px;
+            
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            // background-color: gray;
+            gap: 10px;
+            input{
+                padding: 10px 20px;
+                // width: 300px;
+                border-radius: 5px;
+                border: 1px solid $main-color;
+                align-items: center;
+                &:focus{
+                    transition: all 0.3s;
+                    outline: none;
+                    border: 1px solid $main-color;
+                }
+            }
+            button{
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: $main-color;
+                border: none;
+                cursor: pointer;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                
+            }
+        }
+    }
+    .header-login.open{
+        display: flex;
+        transition: all 0.3s ease-in-out;
+        // transform:scale(0.9);
+        // opacity: 1;
+    }
 }
 
 //Responsive

@@ -19,3 +19,16 @@ a{
 body{
     font-family: "Montserrat", sans-serif;
 }
+#root{
+    opacity: 0;
+    animation: FafadeIn 2s forwards;
+}
+
+@keyframes FafadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

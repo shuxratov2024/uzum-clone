@@ -3,14 +3,18 @@ import SearchSvg from '../SvgComponents/SearchSvg'
 import UserSvg from '../SvgComponents/UserSvg'
 import LikeSvg from './../SvgComponents/LikeSvg';
 import BagSvg from './../SvgComponents/BagSvg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function Header() {
+  const [login, setLogin] = useState(false)
   const [search, setSearch] = useState(false)
   
   function handleSearch() {
     setSearch((open) => !open)
+  }
+  function handleLogin() {
+    setLogin((open) => !open);
   }
   return (
     <>
@@ -53,11 +57,22 @@ function Header() {
             <button className="header-search"> <SearchSvg/> </button>
             </div>
             <ul className="header-sistems">
-                <li> <UserSvg/> <a href="">Kirish</a></li>
-                <li> <LikeSvg/> <a href="">Saralangan</a></li>
-                <li> <BagSvg/> <a href="">Savat</a></li>
+                <li onClick={handleLogin}> <UserSvg/> <a href="#">Kirish</a></li>
+                <li> <LikeSvg/> <a href="#">Saralangan</a></li>
+                <li> <BagSvg/> <a href="#">Savat</a></li>
             </ul>
         </div>
+            
+          <div className={`header-login ${login ? `open` : ''}`}>
+            <div className="login-item">
+              <form>
+                <h3>Telefon raqamini kiriting</h3>
+                <h4>Tasdiqlash kodini SMS orqali yuboramiz</h4>
+                <input type="tel" placeholder='+998 99 999 99 99' maxLength={"13"}   />
+                <button className="kod">Kodni olish</button>
+              </form>
+            </div>
+          </div>
 
             <div className={`header-popup ${search ? `open` : ''}`}>
               <div className="header-popup-head">
