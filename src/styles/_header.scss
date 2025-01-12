@@ -1,0 +1,189 @@
+@import "_variables.scss";
+
+.header{
+    margin: 0 auto;
+    max-width: 1200px;
+
+    &-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    &-logo{
+        padding: 5px 10px;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover{
+            transition: all 0.3s;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+    }
+    &-catalog{
+        background-color: $main-color;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        &:hover{
+            transition: all 0.3s;
+            background-color: #7000ff;
+        }
+        button{
+            padding: 10px 20px;
+            
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: $main-color;
+            font-size: 16px;
+            font-weight: 500;
+            &:hover{
+                color: #fff;
+
+            }
+        }
+
+    }
+    &-input{
+        display: flex;
+        text-align: center;
+        input{
+            padding: 10px 20px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #f1f1f1;
+            align-items: center;
+            &:focus{
+                transition: all 0.3s;
+                outline: none;
+                border: 1px solid $main-color;
+            }
+        }
+        button{
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            
+        }
+    }
+    &-sistems{
+        display: flex;
+        gap: 10px;
+        margin-left: 20px;
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color:transparent;
+            cursor: pointer;
+            &:hover{
+                transition: all 0.3s;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+            }
+        }
+    }
+    &-popup{
+        // display: none;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        // transform: translateY(120%);
+        margin: 0 auto;
+        flex-direction: column;
+        position: relative;
+        // top: 60px;
+        bottom: 8px;
+        width: 355px;
+        height: 400px;
+        right: 20px;
+        border: 1px solid #e6e6dd;
+        &-product{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        &-head{
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+    }
+    .header-popup.open{
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+//Responsive
+@media (max-width: 1024px){
+    .header{
+        flex-wrap: wrap;
+        &-sistems{
+            justify-content: end;
+        width: 100%;
+        li{
+            a{
+                display: none;
+            }
+        }
+        
+    }
+    &-catalog{
+        
+            margin-right: 4px;
+    }
+    
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        &-item{
+            justify-content: center;
+        }
+        &-sistems{
+            display: none;
+        }
+    }
+}
+
+@media (max-width:640px){
+    .header{
+        &-item{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &-sistems{
+            display: none;
+        }
+        &-input{
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 425px){
+    .header{
+        &-item{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &-input{
+            margin-top: 10px;
+        }
+    }
+}
