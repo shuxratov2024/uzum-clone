@@ -4,12 +4,16 @@ import UserSvg from '../SvgComponents/UserSvg'
 import LikeSvg from './../SvgComponents/LikeSvg';
 import BagSvg from './../SvgComponents/BagSvg';
 import { useEffect, useState } from 'react';
-
+import { Squash as Hamburger } from 'hamburger-react'
 
 function Header() {
   const [login, setLogin] = useState(false)
   const [search, setSearch] = useState(false)
-  
+  const [catalog, setCatalog] = useState(false)
+  function handleCatalog() {
+    setCatalog((open) => !open)
+  }
+
   function handleSearch() {
     setSearch((open) => !open)
   }
@@ -46,7 +50,7 @@ function Header() {
 </svg>
             </div>
             <div className="header-catalog">
-            <button className="header-button">
+            <button className="header-button" onClick={handleCatalog}>
             Katalog
             </button>
             </div>
